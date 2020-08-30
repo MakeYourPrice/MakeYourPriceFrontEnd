@@ -36,6 +36,11 @@ export default {
   props: {
     msg: String,
   },
+  methods: {
+    batata() {
+      console.log('oiii');
+    },
+  },
 };
 </script>
 
