@@ -7,4 +7,4 @@ module.exports = {
       styles: path.resolve(__dirname, './src/assets/styles'),
     },
   },
-}
+};
