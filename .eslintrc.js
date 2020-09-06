@@ -16,6 +16,6 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-shadow': 'off',
     'no-trailing-spaces': 'off',
-    'import/no-unresolved': "off",
+    'import/no-unresolved': 'off',
   },
 };

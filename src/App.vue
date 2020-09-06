@@ -39,11 +39,15 @@ export default {
 <style lang="scss" scoped>
 .md-app {
   height: 100vh;
+  width: 100%;
   border: 1px solid rgba(#000, .12);
 }
 .page-container {
   min-height: 100%;
   display: flex;
+}
+.md-app-content {
+  width: 100%;
 }
 
 </style>
