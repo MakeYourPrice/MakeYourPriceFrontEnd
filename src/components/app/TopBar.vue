@@ -1,0 +1,38 @@
+<template>
+  <div style="width: 100%">
+    <div class="md-toolbar-row">
+      <div class="md-toolbar-section-start">
+        <md-button class="md-icon-button" @click="toggleMenuVisible">
+          <md-icon>menu</md-icon>
+        </md-button>
+
+        <span class="md-title">Make Your Price</span>
+      </div>
+
+      <div class="md-toolbar-section-end">
+        <md-button class="md-icon-button">
+          <md-icon>more_vert</md-icon>
+        </md-button>
+      </div>
+    </div>
+
+    <div class="md-toolbar-row">
+      <md-tabs class="md-primary">
+        <md-tab id="tab-home" md-label="Home"></md-tab>
+        <md-tab id="tab-pages" md-label="Pages"></md-tab>
+        <md-tab id="tab-posts" md-label="Posts"></md-tab>
+        <md-tab id="tab-favorites" md-label="Favorites"></md-tab>
+      </md-tabs>
+    </div>
+  </div>
+</template>
+
+<script>
+import { mapMutations } from 'vuex';
+
+export default {
+  methods: {
+    ...mapMutations(['toggleMenuVisible']),
+  },
+};
+</script>
