@@ -11,7 +11,9 @@
       </md-app-drawer>
 
       <md-app-content>
-        <router-view></router-view>
+        <transition name="fade-slide" mode="out-in">
+          <router-view></router-view>
+        </transition>
       </md-app-content>
     </md-app>
   </div>
@@ -48,6 +50,17 @@ export default {
 }
 .md-app-content {
   width: 100%;
+}
+
+.fade-slide-enter-active {
+  transition: all 0.5s ease;
+}
+.fade-slide-leave-active {
+  transition: all 0.5s ease;
+}
+.fade-slide-enter, .fade-slide-leave-to {
+  transform: translateX(40px);
+  opacity: 0;
 }
 
 </style>
