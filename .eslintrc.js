@@ -5,6 +5,8 @@ module.exports = {
   },
   extends: [
     'plugin:vue/essential',
+    'plugin:import/errors',
+    'plugin:import/warnings',
     '@vue/airbnb',
   ],
   parserOptions: {

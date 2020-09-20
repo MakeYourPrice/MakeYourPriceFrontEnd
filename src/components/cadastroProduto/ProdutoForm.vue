@@ -1,5 +1,6 @@
 <!--suppress XmlInvalidId -->
 <template>
+
   <form  class="md-layout">
     <div class="md-layout md-gutter">
       <div class="md-layout-item ">
@@ -44,6 +45,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'ProdutoForm',
   data() {
@@ -53,19 +56,35 @@ export default {
         brand: '',
         category: '',
       },
-      brands: [
-        { id: 51, name: 'Italac' },
-        { id: 52, name: 'Nestle' },
-        { id: 53, name: 'Panaceia' },
-      ],
-
-      categories: [
-        { id: 51, name: 'Laticinio' },
-        { id: 52, name: 'Doces' },
-        { id: 53, name: 'Panaceia2' },
-      ],
+      // brands: [
+      //   { id: 51, name: 'Italac' },
+      //   { id: 52, name: 'Nestle' },
+      //   { id: 53, name: 'Panaceia' },
+      // ],
+      //
+      // categories: [
+      //   { id: 51, name: 'Laticinio' },
+      //   { id: 52, name: 'Doces' },
+      //   { id: 53, name: 'Panaceia2' },
+      // ],
 
     };
+  },
+
+  mounted() {
+    // this.axios.get('Product/get/brands').then((response) => {
+    //   console.log(response);
+    // });
+    this.$store.dispatch('product/loadProductInfo').then(() => {
+      console.log('foiiiii');
+    });
+  },
+
+  computed: {
+    ...mapGetters('product', [
+      'brands',
+      'categories',
+    ]),
   },
 };
 </script>

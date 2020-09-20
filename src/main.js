@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueMaterial from 'vue-material';
-import axios from 'axios';
+import ax from 'config/axiosConfig';
 import VueAxios from 'vue-axios';
 import App from './App.vue';
 import 'styles/_app.scss';
@@ -11,12 +11,7 @@ import store from './store';
 
 Vue.config.productionTip = false;
 Vue.use(VueMaterial);
-const axiosConfig = {
-  baseURL: process.env.API_URL,
-  timeout: 30000,
-};
-
-Vue.use(VueAxios, axios.create(axiosConfig));
+Vue.use(VueAxios, ax);
 
 new Vue({
   router,
