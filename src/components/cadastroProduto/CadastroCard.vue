@@ -6,11 +6,11 @@
     </md-card-header>
 
     <md-card-content>
-      <slot></slot>
+      <slot name="content"></slot>
     </md-card-content>
 
     <md-card-actions>
-      <md-button type="submit" class="md-primary">Cadastrar Produto</md-button>
+      <slot name="actions"></slot>
     </md-card-actions>
   </md-card>
 </template>

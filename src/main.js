@@ -8,10 +8,13 @@ import 'vue-material/dist/vue-material.min.css';
 import 'vue-material/dist/theme/default.css';
 import router from './router';
 import store from './store';
+import validationRules from './validation';
 
 Vue.config.productionTip = false;
 Vue.use(VueMaterial);
 Vue.use(VueAxios, ax);
+
+validationRules();
 
 new Vue({
   router,
