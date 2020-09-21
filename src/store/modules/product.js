@@ -36,7 +36,7 @@ const mutations = {
     state.categories = categories;
   },
   setBrands(state, brands) {
-    state.categories = brands;
+    state.brands = brands;
   },
 };
 
