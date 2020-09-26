@@ -6,64 +6,51 @@
         <template v-slot:content>
           <div class="md-layout md-gutter">
             <div class="md-layout-item ">
-              <ValidationProvider
+
+              <validation-form-wraper
                 name="Nome do Produto"
-                rules="max_length:30|required" v-slot="{ errors, classes }"
+                rules="max_length:30|required"
+                v-slot="{nome}"
               >
-
-                <md-field :class="classes">
-                  <label for="prod-name">Nome</label>
-                  <md-input name="prod-name" v-model="form.name"/>
-                  <span class="md-error"> {{ errors[0] }} </span>
-                </md-field>
-
-              </ValidationProvider>
+                <md-input v-model="form.name" :name="nome"/>
+              </validation-form-wraper>
 
             </div>
             <div class="md-layout-item">
-              <ValidationProvider
+
+              <validation-form-wraper
                 name="Marca do produto"
-                rules="required" v-slot="{ errors, classes }"
+                rules="required"
+                v-slot="{nome}"
               >
-                <md-field :class="classes">
-                  <label for="prod-brand">Marca</label>
-                  <md-select v-model="form.brand" name="prod-brand">
-                    <md-option
-                      v-for="brand in brands"
-                      :key="brand.id"
-                      :value="brand.id"
-                    >
-                      {{ brand.name }}
-                    </md-option>
-                  </md-select>
-                  <span class="md-error"> {{ errors[0] }} </span>
-                </md-field>
-
-              </ValidationProvider>
+                <md-select v-model="form.brand" :name="nome">
+                  <md-option
+                    v-for="brand in brands"
+                    :key="brand.id"
+                    :value="brand.id"
+                  >
+                    {{ brand.name }}
+                  </md-option>
+                </md-select>
+              </validation-form-wraper>
             </div>
+
             <div class="md-layout-item">
-
-              <ValidationProvider
+              <validation-form-wraper
                 name="Categoria do produto"
-                rules="required" v-slot="{ errors, classes }"
+                rules="required"
+                v-slot="{nome}"
               >
-                <md-field :class="classes">
-                  <label for="prod-category">Categoria</label>
-
-                  <md-select v-model="form.category" name="prod-category">
-                    <md-option
-                      v-for="category in categories"
-                      :key="category.id"
-                      :value="category.id"
-                    >
-                      {{ category.name }}
-                    </md-option>
-                  </md-select>
-                  <span class="md-error"> {{ errors[0] }} </span>
-                </md-field>
-
-              </ValidationProvider>
-
+                <md-select v-model="form.category" :name="nome">
+                  <md-option
+                    v-for="category in categories"
+                    :key="category.id"
+                    :value="category.id"
+                  >
+                    {{ category.name }}
+                  </md-option>
+                </md-select>
+              </validation-form-wraper>
             </div>
           </div>
           <md-snackbar>
@@ -80,12 +67,17 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { ValidationProvider, ValidationObserver } from 'vee-validate';
+import { ValidationObserver } from 'vee-validate';
 import CadastroCard from 'components/cadastroProduto/CadastroCard.vue';
+import ValidationFormWraper from 'components/cadastroProduto/ValidationFormWraper.vue';
 
 export default {
   name: 'ProdutoForm',
-  components: { CadastroCard, ValidationProvider, ValidationObserver },
+  components: {
+    ValidationFormWraper,
+    CadastroCard,
+    ValidationObserver,
+  },
   data() {
     return {
       form: {
@@ -119,7 +111,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-
-</style>

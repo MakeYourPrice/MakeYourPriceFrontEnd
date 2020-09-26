@@ -10,8 +10,6 @@ function validationRules() {
 
   extend('required', {
     validate(value) {
-      console.log('requireddd');
-      console.log(value);
       return {
         required: true,
         valid: ['', null, undefined].indexOf(value) === -1,

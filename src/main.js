@@ -9,12 +9,21 @@ import 'vue-material/dist/theme/default.css';
 import router from './router';
 import store from './store';
 import validationRules from './validation';
+import helpers from './helpers';
 
 Vue.config.productionTip = false;
 Vue.use(VueMaterial);
 Vue.use(VueAxios, ax);
 
 validationRules();
+
+// helpers
+Vue.use({
+  install() {
+    Vue.helpers = helpers;
+    Vue.prototype.$helpers = helpers;
+  },
+});
 
 new Vue({
   router,
