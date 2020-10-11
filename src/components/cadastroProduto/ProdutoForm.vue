@@ -70,9 +70,11 @@ import { mapGetters } from 'vuex';
 import { ValidationObserver } from 'vee-validate';
 import CadastroCard from 'components/cadastroProduto/CadastroCard.vue';
 import ValidationFormWraper from 'components/cadastroProduto/ValidationFormWraper.vue';
+import notificationMixin from 'mixins/notification';
 
 export default {
   name: 'ProdutoForm',
+  mixins: [notificationMixin],
   components: {
     ValidationFormWraper,
     CadastroCard,
@@ -99,6 +101,8 @@ export default {
         console.log('form invalido');
         return;
       }
+      this.notifySucess('Produto cadastrado');
+
       console.log('form submetido');
     },
   },

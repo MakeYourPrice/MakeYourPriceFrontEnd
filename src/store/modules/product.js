@@ -20,12 +20,12 @@ const actions = {
     return Promise.all([dispatch('loadBrands'), dispatch('loadCategories')]);
   },
   loadBrands({ commit }) {
-    return axios.get('Product/get/brands').then((response) => {
+    return axios.get('product-brand').then((response) => {
       commit('setBrands', response.data);
     });
   },
   loadCategories({ commit }) {
-    return axios.get('Product/get/categories').then((response) => {
+    return axios.get('product-category').then((response) => {
       commit('setCategories', response.data);
     });
   },

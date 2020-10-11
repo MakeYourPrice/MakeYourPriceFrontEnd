@@ -9,6 +9,7 @@ module.exports = {
       modules: path.resolve(__dirname, './src/store/modules'),
       views: path.resolve(__dirname, './src/views'),
       config: path.resolve(__dirname, './src/config'),
+      mixins: path.resolve(__dirname, './src/mixins'),
     },
   },
 };

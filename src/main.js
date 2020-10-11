@@ -12,6 +12,8 @@ import helpers from './helpers';
 
 Vue.use(VueSweetalert2);
 
+require('./errorHandling');
+
 Vue.config.productionTip = false;
 Vue.use(VueMaterial);
 Vue.use(VueAxios, ax);
