@@ -7,18 +7,15 @@ import App from './App.vue';
 import 'styles/_app.scss';
 import router from './router';
 import store from './store';
-import validationRules from './validation';
 import helpers from './helpers';
 
-Vue.use(VueSweetalert2);
-
+require('./validation');
 require('./errorHandling');
 
 Vue.config.productionTip = false;
 Vue.use(VueMaterial);
 Vue.use(VueAxios, ax);
-
-validationRules();
+Vue.use(VueSweetalert2);
 
 // helpers
 Vue.use({

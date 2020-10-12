@@ -53,9 +53,6 @@
               </validation-form-wraper>
             </div>
           </div>
-          <md-snackbar>
-            The user was saved with success!
-          </md-snackbar>
         </template>
         <template v-slot:actions>
           <md-button type="submit" class="md-primary">Cadastrar Produto</md-button>
@@ -98,7 +95,6 @@ export default {
 
     buttonSubmit(invalido) {
       if (invalido) {
-        console.log('form invalido');
         return;
       }
       this.notifySucess('Produto cadastrado');
