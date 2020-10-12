@@ -104,7 +104,7 @@ export default {
       }).then(() => {
         this.notifySucess('Produto cadastrado');
       }).catch(() => {
-        this.notifyError('erro');
+        this.notifyError('Desculpe ocorreu um erro ao cadastrar o produto');
       });
     },
   },

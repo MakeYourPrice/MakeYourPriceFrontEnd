@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons');
-
 @import '~sweetalert2/src/variables';
 @import '~@sweetalert2/theme-material-ui/material-ui.scss';
 @import '~vue-material/dist/vue-material.min.css';
 @import '~vue-material/dist/theme/default.css';
+@import "~include-media/dist/_include-media.scss";
+@import '~sweetalert2/src/sweetalert2';
+@import "vars";
 
 body {
   height: 100%;
@@ -14,7 +16,9 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: center;$breakpoints: (phone: 640px,
+               tablet: 768px,
+               desktop: 1024px) !default;
   color: #2c3e50;
 }
 
@@ -51,13 +55,19 @@ body {
 // notificaçoes
 
 .toast-error {
-
   width: 50vw !important;
-  justify-content: space-between !important;
 
-  h1 {
-    color: #e3e3e3;
+  @include media(">=phone", "<tablet") {
+    width: 90vw !important;
+  }
+
+  div:first-child {
+    width: 100%;
+  }
+
+  #swal2-title {
+    color: $cinza;
+    font-size: 0.8rem;
   }
 }
 
-@import '~sweetalert2/src/sweetalert2';

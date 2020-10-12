@@ -19,12 +19,13 @@ export default {
      * @param {string} titulo
      * @returns {Promise<SweetAlertResult<Awaited<any>>>}
      */
-    notifyError(titulo) { // TODO arrumar essa notificacao
+    notifyError(titulo) {
       return this.$swal.fire({
         toast: true,
         position: 'bottom',
         icon: 'error',
-        timer: 40000,
+        timer: 3000,
+        timerProgressBar: true,
         customClass: {
           container: 'toast-error',
         },
