@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons');
+
+@import '~sweetalert2/src/variables';
 @import '~@sweetalert2/theme-material-ui/material-ui.scss';
 @import '~vue-material/dist/vue-material.min.css';
 @import '~vue-material/dist/theme/default.css';
@@ -45,3 +47,17 @@ body {
     height: 100%;
   }
 }
+
+// notificaçoes
+
+.toast-error {
+
+  width: 50vw !important;
+  justify-content: space-between !important;
+
+  h1 {
+    color: #e3e3e3;
+  }
+}
+
+@import '~sweetalert2/src/sweetalert2';

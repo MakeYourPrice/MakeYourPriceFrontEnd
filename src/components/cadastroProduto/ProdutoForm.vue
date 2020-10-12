@@ -97,9 +97,15 @@ export default {
       if (invalido) {
         return;
       }
-      this.notifySucess('Produto cadastrado');
-
-      console.log('form submetido');
+      this.axios.post('/products', {
+        name: this.form.name,
+        productBrandId: this.form.brand,
+        productCategoryId: this.form.category,
+      }).then(() => {
+        this.notifySucess('Produto cadastrado');
+      }).catch(() => {
+        this.notifyError('erro');
+      });
     },
   },
 
