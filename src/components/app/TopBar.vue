@@ -20,6 +20,7 @@
       <md-tabs class="md-primary" md-sync-route>
         <md-tab id="tab-home" md-label="Home" to="/" exact></md-tab>
         <md-tab id="tab-produto" md-label="Cadastrar um produto" to="/product/new"></md-tab>
+        <md-tab id="tab-produto-show" md-label="Produtos" to="/product/show"></md-tab>
       </md-tabs>
     </div>
   </div>
