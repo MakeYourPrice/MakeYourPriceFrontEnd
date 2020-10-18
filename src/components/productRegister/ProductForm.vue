@@ -65,8 +65,8 @@
 <script>
 import { mapGetters } from 'vuex';
 import { ValidationObserver } from 'vee-validate';
-import CadastroCard from 'components/cadastroProduto/CadastroCard.vue';
-import ValidationFormWraper from 'components/cadastroProduto/ValidationFormWraper.vue';
+import CadastroCard from 'components/productRegister/RegisterCard.vue';
+import ValidationFormWraper from 'components/productRegister/ValidationFormWrapper.vue';
 import notificationMixin from 'mixins/notification';
 
 export default {
