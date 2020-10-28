@@ -71,3 +71,13 @@ body {
   }
 }
 
+
+.disable-scrollbars {
+  //noinspection CssUnknownProperty
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent; /* Chrome/Safari/Webkit */
+  }
+}
