@@ -1,13 +1,13 @@
 <template>
   <md-list-item>
     <md-avatar>
-      <ftp-image img-path="product.productImage"></ftp-image>
+      <ftp-image :img-path="productObject.image"></ftp-image>
     </md-avatar>
 
     <div class="md-list-item-text">
       <span>{{ productObject.name }}</span>
-      <span>{{ productObject.productBrand }}</span>
-      <span>{{ productObject.productBrand}}</span>
+      <span>{{ productObject.brand }}</span>
+      <span>{{ productObject.category}}</span>
     </div>
 
   </md-list-item>
