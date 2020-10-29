@@ -3,6 +3,7 @@ import VueMaterial from 'vue-material';
 import ax from 'config/axiosConfig';
 import VueAxios from 'vue-axios';
 import Swal from 'sweetalert2';
+import PortalVue from 'portal-vue';
 import App from './App.vue';
 import 'styles/_app.scss';
 import router from './router';
@@ -15,6 +16,7 @@ require('./errorHandling');
 Vue.config.productionTip = false;
 Vue.use(VueMaterial);
 Vue.use(VueAxios, ax);
+Vue.use(PortalVue);
 
 // helpers
 Vue.use({
