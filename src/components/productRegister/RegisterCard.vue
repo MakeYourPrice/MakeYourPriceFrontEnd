@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'CadastroCard',
+  name: 'RegisterCard',
 };
 </script>
 
