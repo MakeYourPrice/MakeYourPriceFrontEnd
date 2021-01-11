@@ -1,66 +1,32 @@
 <template>
-  <div class="page-container">
-    <md-app md-waterfall md-mode="fixed-last">
-
-      <md-app-toolbar class="md-large md-dense md-primary">
-        <top-bar></top-bar>
-      </md-app-toolbar>
-
-      <md-app-drawer :md-active="menuVisible" @update:mdActive="setMenuVisible">
-        <side-bar></side-bar>
-      </md-app-drawer>
-
-      <md-app-content>
-        <transition name="fade-slide" mode="out-in">
-          <router-view></router-view>
-        </transition>
-      </md-app-content>
-    </md-app>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
-<script>
-import { mapMutations, mapGetters } from 'vuex';
-import SideBar from './components/app/SideBar.vue';
-import TopBar from './components/app/TopBar.vue';
-
-export default {
-  name: 'App',
-  components: { TopBar, SideBar },
-  methods: {
-    ...mapMutations(['toggleMenuVisible', 'setMenuVisible']),
-
-  },
-
-  computed: {
-    ...mapGetters(['menuVisible']),
-  },
-};
-</script>
-
-<style lang="scss" scoped>
-.md-app {
-  height: 100vh;
-  width: 100%;
-  border: 1px solid rgba(#000, .12);
-}
-.page-container {
-  min-height: 100%;
-  display: flex;
-}
-.md-app-content {
-  width: 100%;
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 
-.fade-slide-enter-active {
-  transition: all 0.5s ease;
-}
-.fade-slide-leave-active {
-  transition: all 0.5s ease;
-}
-.fade-slide-enter, .fade-slide-leave-to {
-  transform: translateX(40px);
-  opacity: 0;
-}
+#nav {
+  padding: 30px;
 
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
 </style>

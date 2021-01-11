@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from 'views/HomeView.vue';
-import CadastroProduto from 'views/ProductRegisterView.vue';
-import ProdutosCadastrados from 'views/productsView';
+import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
@@ -13,20 +11,19 @@ const routes = [
     component: Home,
   },
   {
-    path: '/product/new',
-    name: 'Cadastro de Produto',
-    component: CadastroProduto,
-  },
-  {
-    path: '/product/show',
-    name: 'Lista de Produtos',
-    component: ProdutosCadastrados,
+    path: '/about',
+    name: 'About',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
 ];
 
 const router = new VueRouter({
-  routes,
   mode: 'history',
+  base: process.env.BASE_URL,
+  routes,
 });
 
 export default router;
