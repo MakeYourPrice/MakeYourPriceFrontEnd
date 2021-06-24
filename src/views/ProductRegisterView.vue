@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ProdutoForm from 'components/cadastroProduto/ProdutoForm.vue';
+import ProdutoForm from 'components/productRegister/ProductForm.vue';
 
 export default {
   components: { ProdutoForm },

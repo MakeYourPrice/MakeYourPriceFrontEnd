@@ -2,19 +2,37 @@ import Vue from 'vue';
 import VueMaterial from 'vue-material';
 import ax from 'config/axiosConfig';
 import VueAxios from 'vue-axios';
+import Swal from 'sweetalert2';
+import PortalVue from 'portal-vue';
 import App from './App.vue';
 import 'styles/_app.scss';
-import 'vue-material/dist/vue-material.min.css';
-import 'vue-material/dist/theme/default.css';
 import router from './router';
 import store from './store';
-import validationRules from './validation';
+import helpers from './helpers';
+
+require('./validation');
+require('./errorHandling');
 
 Vue.config.productionTip = false;
 Vue.use(VueMaterial);
 Vue.use(VueAxios, ax);
+Vue.use(PortalVue);
 
-validationRules();
+// helpers
+Vue.use({
+  install() {
+    Vue.helpers = helpers;
+    Vue.prototype.$helpers = helpers;
+  },
+});
+
+// sweet alert
+Vue.use({
+  install() {
+    Vue.swal = Swal;
+    Vue.prototype.$swal = Swal;
+  },
+});
 
 new Vue({
   router,

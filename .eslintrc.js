@@ -19,5 +19,7 @@ module.exports = {
     'no-shadow': 'off',
     'no-trailing-spaces': 'off',
     'import/no-unresolved': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'import/extensions': 'off'
   },
 };

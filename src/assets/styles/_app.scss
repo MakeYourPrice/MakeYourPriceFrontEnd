@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons');
+@import '~sweetalert2/src/variables';
+@import '~@sweetalert2/theme-material-ui/material-ui.scss';
+@import '~vue-material/dist/vue-material.min.css';
+@import '~vue-material/dist/theme/default.css';
+@import "~include-media/dist/_include-media.scss";
+@import '~sweetalert2/src/sweetalert2';
+@import "vars";
+
 body {
   height: 100%;
   overflow: hidden;
@@ -8,7 +16,9 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: center;$breakpoints: (phone: 640px,
+               tablet: 768px,
+               desktop: 1024px) !default;
   color: #2c3e50;
 }
 
@@ -39,5 +49,35 @@ body {
   >div {
     width: 100%;
     height: 100%;
+  }
+}
+
+// notificaçoes
+
+.toast-error {
+  width: 50vw !important;
+
+  @include media(">=phone", "<tablet") {
+    width: 90vw !important;
+  }
+
+  div:first-child {
+    width: 100%;
+  }
+
+  #swal2-title {
+    color: $cinza;
+    font-size: 0.8rem;
+  }
+}
+
+
+.disable-scrollbars {
+  //noinspection CssUnknownProperty
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent; /* Chrome/Safari/Webkit */
   }
 }

@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from 'views/Home.vue';
-import CadastroProduto from 'views/CadastroProduto.vue';
+import Home from 'views/HomeView.vue';
+import CadastroProduto from 'views/ProductRegisterView.vue';
+import ProdutosCadastrados from 'views/productsView';
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/product/new',
     name: 'Cadastro de Produto',
     component: CadastroProduto,
+  },
+  {
+    path: '/product/show',
+    name: 'Lista de Produtos',
+    component: ProdutosCadastrados,
   },
 ];
 
