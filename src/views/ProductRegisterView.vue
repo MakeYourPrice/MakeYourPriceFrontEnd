@@ -1,15 +1,19 @@
 <template>
-  <div class="d-flex">
+  <div>
     <h2>Cadastro de produto</h2>
-    <produto-form></produto-form>
+    <product-form></product-form>
   </div>
 </template>
 
 <script>
-import ProdutoForm from 'components/productRegister/ProductForm.vue';
+import ProductForm from '@/components/product/ProductForm';
 
 export default {
-  components: { ProdutoForm },
+  name: 'ProductRegisterView',
+  components: { ProductForm },
 };
-
 </script>
+
+<style scoped>
+
+</style>

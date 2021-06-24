@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import ProductsList from 'components/products/ProductsList';
+import ProductsList from '@/components/product/ProductsList';
 
 export default {
   name: 'ProdutosCadastrados',

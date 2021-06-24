@@ -1,5 +1,5 @@
 <template>
-  <img :src="baseImgLink + imgPath" alt="Imagem não é inclusiva, me desculpe">
+  <img :src="imgUrl" alt="Imagem de comida">
 </template>
 
 <script>
@@ -7,13 +7,16 @@ export default {
   name: 'FtpImage',
   props: {
     imgPath: {
-      required: true,
+      required: false,
       type: String,
     },
   },
   computed: {
-    baseImgLink() {
-      return process.env.VUE_APP_API_URL;
+    imgUrl() {
+      if (this.imgPath) {
+        return process.env.VUE_APP_API_URL + this.imgPath;
+      }
+      return 'https://image.flaticon.com/icons/png/128/1826/1826237.png';
     },
   },
 };
