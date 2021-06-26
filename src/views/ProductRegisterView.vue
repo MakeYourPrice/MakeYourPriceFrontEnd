@@ -1,19 +1,15 @@
 <template>
-  <div>
-    <h2>Cadastro de produto</h2>
+  <view-card title="Cadastro de produtos">
     <product-form></product-form>
-  </div>
+  </view-card>
 </template>
 
 <script>
 import ProductForm from '@/components/product/ProductForm';
+import ViewCard from '@/components/app/ViewCard';
 
 export default {
   name: 'ProductRegisterView',
-  components: { ProductForm },
+  components: { ProductForm, ViewCard },
 };
 </script>
-
-<style scoped>
-
-</style>
