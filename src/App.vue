@@ -8,7 +8,9 @@
           justify="center"
         >
           <v-col class="px-6 py-5" cols="12" sm="6">
-            <router-view></router-view>
+            <transition name="fade-slide" mode="out-in">
+              <router-view></router-view>
+            </transition>
           </v-col>
         </v-row>
       </v-container>
@@ -26,3 +28,15 @@ export default {
   },
 };
 </script>
+<style>
+.fade-slide-enter-active {
+  transition: all 0.5s ease;
+}
+.fade-slide-leave-active {
+  transition: all 0.5s ease;
+}
+.fade-slide-enter, .fade-slide-leave-to {
+  transform: translateX(40px);
+  opacity: 0;
+}
+</style>

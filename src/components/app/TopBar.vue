@@ -33,3 +33,8 @@
     </template>
   </v-app-bar>
 </template>
+<style>
+.v-slide-group__prev {
+  display: none !important;
+}
+</style>

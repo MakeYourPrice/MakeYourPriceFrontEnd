@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <view-card title="Lista de produtos">
     <ProductsList/>
     <div>
       Icons made by
@@ -7,15 +7,15 @@
       from
       <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
     </div>
-
-  </div>
+  </view-card>
 </template>
 
 <script>
 import ProductsList from '@/components/product/ProductsList';
+import ViewCard from '@/components/app/ViewCard';
 
 export default {
   name: 'ProdutosCadastrados',
-  components: { ProductsList },
+  components: { ViewCard, ProductsList },
 };
 </script>

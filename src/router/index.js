@@ -19,14 +19,9 @@ const routes = [
   },
   {
     path: '/product/show',
-    name: 'Lista de Produtos',
+    name: 'produtos',
     component: ProductsView,
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  // },
 ];
 
 const router = new VueRouter({
